@@ -12,13 +12,14 @@ def start_of_chunk(prev_tag, tag, prev_type, type_):
     chunk_start = False
 
     if tag == 'B': chunk_start = True
+    '''
     if prev_tag == 'O' and tag == 'I': chunk_start = True
     if tag != 'O' and tag != '.' and prev_type != type_:
         chunk_start = True
     # these chunks are assumed to have length 1
     if tag == '[': chunk_start = True
     if tag == ']': chunk_start = True
-
+    '''
     return chunk_start
 
 def end_of_chunk(prev_tag, tag, prev_type, type_):
